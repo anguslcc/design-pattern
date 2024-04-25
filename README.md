@@ -3,6 +3,7 @@
 - [1. Introduction](#1-introduction)
 - [2. Creational Design Patterns](#2-creational-design-patterns)
    * [2.1  Builder](#21-builder)
+   * [2.2  Factory](#22-factory)
 
 # 1. Introduction<a name="1-introduction"></a>
 
@@ -12,7 +13,7 @@ This repository presents a concise guide to design patterns, offering solutions 
 
 ## 2.1  Builder<a name="21-builder"></a>
 
-Builder pattern provides a flexible and fluent approach to constructing complex objects. Instead of using numerous constructors, the pattern uses a separate Builder class that constructs the final object step by step. This Builder class encapsulates the construction logic and allows for better control over the construction process. For a sample code implementation, please click [here](src/com/pattern/builder).
+Builder pattern provides a flexible and fluent approach to constructing complex objects. Instead of using numerous constructors, the pattern uses a separate Builder class that constructs the final object step by step. This Builder class encapsulates the construction logic and allows for better control over the construction process. For a sample code implementation, please click [here](src/main/java/com/pattern/builder).
 
 ### 2.1.1  When to Use
 - To create complex objects with numerous optional parameters, minimizing the need for multiple constructors.
@@ -38,4 +39,44 @@ return WebClient.builder()
 		.filter(oauth2Filter)
 		.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
 		.build();
+```
+
+## 2.2  Factory<a name="22-factory"></a>
+Factory pattern simplifies the process of creating objects, particularly when the creation logic involves some complexity. Instead of calling a constructor directly, this pattern uses a separate Factory class to handle the instantiation of objects. For a sample code implementation, please click [here](src/main/java/com/pattern/factory).
+
+### 2.2.1  When to Use
+- To dynamically create the exact type of object needed at runtime, based on incoming parameters, promoting polymorphism by having the code interact with a base class or an interface while the factory returns specific concrete objects.
+- To encapsulate object creation, thereby enhancing code flexibility and maintainability by isolating the construction process.
+
+### 2.2.2  Real-Life Examples
+
+**[BeanFactory](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/BeanFactory.html)**
+```java
+@Component
+public class BeanRetriever {
+
+  private final ApplicationContext context;
+
+  public BeanRetriever(ApplicationContext context) {
+    this.context = context;
+  }
+
+  public MyBean getBeans() {
+    // ApplicationContext extends BeanFactory
+   return context.getBean(MyBean.class);
+	
+  }
+}
+```
+
+**[NumberFormat](https://docs.oracle.com/javase/8/docs/api/java/text/NumberFormat.html)**
+```java
+// Get the NumberFormat instance for the default locale
+NumberFormat format = NumberFormat.getInstance();
+
+// Get the NumberFormat instance for a specific locale
+NumberFormat formatInFrance = NumberFormat.getInstance(Locale.UK);
+
+// Get a NumberFormat instance for percentage formatting
+NumberFormat percentFormat = NumberFormat.getPercentInstance();
 ```
