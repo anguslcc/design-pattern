@@ -1,4 +1,4 @@
-package com.pattern.factorymethod;
+package com.pattern.abstractfactory;
 
 public abstract class BankAccount {
 

@@ -5,6 +5,7 @@
    * [2.1  Builder](#21-builder)
    * [2.2  Simple Factory](#22-simple-factory)
    * [2.3  Factory Method](#23-factory-method)
+   * [2.4  Abstract Factory](#24-abstrsct-factory)
 
 # 1. Introduction<a name="1-introduction"></a>
 
@@ -94,3 +95,10 @@ Factory Method pattern provides an interface for creating objects in a superclas
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("MyPersistenceUnit");
 EntityManager em = emf.createEntityManager();
 ```
+
+## 2.4  Abstract Factory<a name="24-abstrsct-factory"></a>
+Abstract Factory pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes. For a sample code implementation, please click [here](src/main/java/com/pattern/abstractfactory).
+
+### 2.4.1  When to Use
+- When multiple related products need to be created that are intended to work together, ensuring they are styled consistently according to the system's specifications.
+- To enhance flexibility by separating the object creation into classes that implement factory interfaces, allowing these classes to be developed and modified without impacting the application that uses them.
