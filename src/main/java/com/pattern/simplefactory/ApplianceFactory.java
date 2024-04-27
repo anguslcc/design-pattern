@@ -1,4 +1,4 @@
-package com.pattern.factory;
+package com.pattern.simplefactory;
 
 import java.util.UUID;
 

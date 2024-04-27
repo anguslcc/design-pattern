@@ -3,7 +3,8 @@
 - [1. Introduction](#1-introduction)
 - [2. Creational Design Patterns](#2-creational-design-patterns)
    * [2.1  Builder](#21-builder)
-   * [2.2  Factory](#22-factory)
+   * [2.2  Simple Factory](#22-simple-factory)
+   * [2.3  Factory Method](#23-factory-method)
 
 # 1. Introduction<a name="1-introduction"></a>
 
@@ -41,8 +42,8 @@ return WebClient.builder()
 		.build();
 ```
 
-## 2.2  Factory<a name="22-factory"></a>
-Factory pattern simplifies the process of creating objects, particularly when the creation logic involves some complexity. Instead of calling a constructor directly, this pattern uses a separate Factory class to handle the instantiation of objects. For a sample code implementation, please click [here](src/main/java/com/pattern/factory).
+## 2.2  Simple Factory<a name="22-simple-factory"></a>
+Simple Factory pattern simplifies the process of creating objects, particularly when the creation logic involves some complexity. Instead of calling a constructor directly, this pattern uses a separate Factory class to handle the instantiation of objects. For a sample code implementation, please click [here](src/main/java/com/pattern/simplefactory).
 
 ### 2.2.1  When to Use
 - To dynamically create the exact type of object needed at runtime, based on incoming parameters, promoting polymorphism by having the code interact with a base class or an interface while the factory returns specific concrete objects.
@@ -79,4 +80,17 @@ NumberFormat formatInFrance = NumberFormat.getInstance(Locale.UK);
 
 // Get a NumberFormat instance for percentage formatting
 NumberFormat percentFormat = NumberFormat.getPercentInstance();
+```
+
+## 2.3  Factory Method<a name="23-factory-method"></a>
+Factory Method pattern provides an interface for creating objects in a superclass, allowing subclasses to determine which classes to instantiate based on their own specific logic. For a sample code implementation, please click [here](src/main/java/com/pattern/factorymethod).
+
+### 2.3.1  When to Use
+- Use the Factory Method pattern in addition to the basic Factory pattern when subclass creation requires additional logic not covered by a simple factory.
+
+### 2.3.2  Real-Life Examples
+**[Persistence](https://javadoc.io/doc/jakarta.persistence/jakarta.persistence-api/latest/jakarta.persistence/jakarta/persistence/Persistence.html)**
+```java
+EntityManagerFactory emf = Persistence.createEntityManagerFactory("MyPersistenceUnit");
+EntityManager em = emf.createEntityManager();
 ```

@@ -1,4 +1,4 @@
-package com.pattern.factory;
+package com.pattern.simplefactory;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
