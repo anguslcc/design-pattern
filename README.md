@@ -87,7 +87,7 @@ NumberFormat percentFormat = NumberFormat.getPercentInstance();
 Factory Method pattern provides an interface for creating objects in a superclass, allowing subclasses to determine which classes to instantiate based on their own specific logic. For a sample code implementation, please click [here](src/main/java/com/pattern/factorymethod).
 
 ### 2.3.1  When to Use
-- Use the Factory Method pattern in addition to the basic Factory pattern when subclass creation requires additional logic not covered by a simple factory.
+- Use the Factory Method pattern in addition to the Simple Factory pattern when subclass creation requires additional logic not covered by a simple factory.
 
 ### 2.3.2  Real-Life Examples
 **[Persistence](https://javadoc.io/doc/jakarta.persistence/jakarta.persistence-api/latest/jakarta.persistence/jakarta/persistence/Persistence.html)**
@@ -100,5 +100,7 @@ EntityManager em = emf.createEntityManager();
 Abstract Factory pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes. For a sample code implementation, please click [here](src/main/java/com/pattern/abstractfactory).
 
 ### 2.4.1  When to Use
-- When multiple related products need to be created that are intended to work together, ensuring they are styled consistently according to the system's specifications.
-- To enhance flexibility by separating the object creation into classes that implement factory interfaces, allowing these classes to be developed and modified without impacting the application that uses them.
+- In addition to the Simple Factory pattern, use the Abstract Factory when multiple related objects are intended to work together seamlessly across the application and their creation needs to be standardized.
+
+
+
