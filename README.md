@@ -6,6 +6,7 @@
    * [2.2  Simple Factory](#22-simple-factory)
    * [2.3  Factory Method](#23-factory-method)
    * [2.4  Abstract Factory](#24-abstrsct-factory)
+   * [2.5  Prototype](#25-prototype)
 
 # 1. Introduction<a name="1-introduction"></a>
 
@@ -102,5 +103,14 @@ Abstract Factory pattern provides a way to encapsulate a group of individual fac
 ### 2.4.1  When to Use
 - In addition to the Simple Factory pattern, use the Abstract Factory when multiple related objects are intended to work together seamlessly across the application and their creation needs to be standardized.
 
+## 2.5  Prototype<a name="25-prototype"></a>
+The Prototype pattern provides a mechanism to clone an existing object rather than creating a new instance from scratch, allowing modifications to the cloned object as needed. For a sample code implementation, please click [here](src/main/java/com/pattern/prototype).
 
+### 2.5.1  When to Use
+- When creating an object is resource-intensive or complicated, and a similar object already exists.
+- When the system needs to be independent of how its objects are created
 
+### 2.5.2  Real-Life Examples
+**[Object.clone()](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)**
+
+**Remark:** Modern Java practices favor the use of copy constructors or factory methods over `clone()`, as they provide greater visibility and control over the copying process of objects.
