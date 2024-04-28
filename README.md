@@ -10,7 +10,7 @@
 
 # 1. Introduction<a name="1-introduction"></a>
 
-This repository presents a concise guide to design patterns, offering solutions to frequent software design challenges. It enables developers to adopt common terms and strategies for clearer communication and teamwork.
+This repository presents a concise guide to design patterns, offering solutions to frequent software design challenges. It enables developers to adopt common terms and strategies for clearer communication and teamwork. Please note that this project is ongoing, and more design patterns will be added periodically.
 
 # 2. Creational Design Patterns<a name="2-creational-design-patterns"></a>
 
