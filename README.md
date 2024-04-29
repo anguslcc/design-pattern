@@ -7,6 +7,8 @@
    * [2.3  Factory Method](#23-factory-method)
    * [2.4  Abstract Factory](#24-abstrsct-factory)
    * [2.5  Prototype](#25-prototype)
+   * [2.6  Singleton](#26-singleton)
+   
 
 # 1. Introduction<a name="1-introduction"></a>
 
@@ -114,3 +116,14 @@ The Prototype pattern provides a mechanism to clone an existing object rather th
 **[Object.clone()](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)**
 
 **Remark:** Modern Java practices favor the use of copy constructors or factory methods over `clone()`, as they provide greater visibility and control over the copying process of objects.
+
+## 2.6  Singleton<a name="26-singleton"></a>
+The Singleton pattern ensures that only one instance of a class exists and provides a global access point to that instance. It can be implemented using eager loading, where the instance is created when the class is loaded, or lazy loading, which creates the instance on its first use. Eager loading is generally preferred unless the instance is costly to create. For a sample code implementation, please click [here](src/main/java/com/pattern/singleton).
+
+### 2.6.1  When to Use
+- When the application requires exactly one instance of a class to coordinate actions across the system.
+- When managing access to a resource that is shared throughout an application, such as a configuration settings object.
+
+### 2.6.2  Real-Life Examples
+** Beans in Spring are treated as singletons by default, unless a different scope is explicitly specified. **
+
