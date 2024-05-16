@@ -11,8 +11,25 @@
    * [2.7  Object Pool](#27-object-pool)
 - [3. Structural Design Patterns](#3-structural-design-patterns)   
    * [3.1  Adapter](#31-adapter)
+   * 3.2  Bridge
+   * 3.3  Decorator
+   * 3.4  Composite
+   * 3.5  Facade
+   * 3.6  Flyweight
+   * 3.7  Proxy
+- 4. Behavioral Design Patterns   
+   * 4.1  Chain of Responsibility
+   * 4.2  Command
+   * 4.3  Interpreter
+   * 4.4  Mediator
+   * 4.5  Iterator
+   * 4.6  Memento
+   * 4.7  Observer
+   * 4.8  State
+   * 4.9  Strategy
+   * 4.10  Template Method
+   * 4.11  Visitor   
    
-
 # 1. Introduction<a name="1-introduction"></a>
 
 This repository presents a concise guide to design patterns, offering solutions to frequent software design challenges. It enables developers to adopt common terms and strategies for clearer communication and teamwork. Please note that this project is ongoing, and more design patterns will be added periodically.
@@ -162,3 +179,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Define query methods here
 }
 ```
+
