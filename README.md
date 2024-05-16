@@ -8,8 +8,28 @@
    * [2.4  Abstract Factory](#24-abstrsct-factory)
    * [2.5  Prototype](#25-prototype)
    * [2.6  Singleton](#26-singleton)
+   * [2.7  Object Pool](#27-object-pool)
+- [3. Structural Design Patterns](#3-structural-design-patterns)   
+   * [3.1  Adapter](#31-adapter)
+   * 3.2  Bridge
+   * 3.3  Decorator
+   * 3.4  Composite
+   * 3.5  Facade
+   * 3.6  Flyweight
+   * 3.7  Proxy
+- 4. Behavioral Design Patterns   
+   * 4.1  Chain of Responsibility
+   * 4.2  Command
+   * 4.3  Interpreter
+   * 4.4  Mediator
+   * 4.5  Iterator
+   * 4.6  Memento
+   * 4.7  Observer
+   * 4.8  State
+   * 4.9  Strategy
+   * 4.10  Template Method
+   * 4.11  Visitor   
    
-
 # 1. Introduction<a name="1-introduction"></a>
 
 This repository presents a concise guide to design patterns, offering solutions to frequent software design challenges. It enables developers to adopt common terms and strategies for clearer communication and teamwork. Please note that this project is ongoing, and more design patterns will be added periodically.
@@ -125,5 +145,38 @@ The Singleton pattern ensures that only one instance of a class exists and provi
 - When managing access to a resource that is shared throughout an application, such as a configuration settings object.
 
 ### 2.6.2  Real-Life Examples
-** Beans in Spring are treated as singletons by default, unless a different scope is explicitly specified. **
+**Beans in Spring are treated as singletons by default, unless a different scope is explicitly specified.**
+
+## 2.7  Object Pool<a name="27-object-pool"></a>
+The Object Pool pattern pre-creates and stores a set of reusable objects in a "pool". These objects should have a method to "reset" their state, allowing them to be reused efficiently. The Object Pool manages the creation, usage, and validation of these objects, and it also handles their release or destruction in a concurrent environment. For a sample code implementation, please click [here](src/main/java/com/pattern/objectpool).
+
+### 2.7.1  When to Use
+- When creating new objects is resource-intensive and significantly impacts performance.
+- When a fixed number of objects in the pool can satisfy the application's demands, minimizing the overhead of creating and destroying objects frequently.
+
+### 2.7.2  Real-Life Examples
+**Database Connection Pool**
+
+# 3. Structural Design Patterns<a name="3-structural-design-patterns"></a>
+
+## 3.1  Adapter<a name="31-adapter"></a>
+The Adapter pattern allows objects with incompatible interfaces to work together by wrapping one of the incompatible objects with an adapter. This adapter translates (or "adapts") its interface to the format expected by the client. This pattern is often implemented using composition, where the adapter contains an instance of the class it adapts. For a sample code implementation, please click [here](src/main/java/com/pattern/adapter).
+
+### 3.1.1  When to Use
+-  When you want to use existing classes that provide the functionality you need but have interfaces that are incompatible with the rest of your application.
+
+### 3.1.2  Real-Life Examples
+**Conversion between [InputStream](https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html) and [Reader](https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html)**
+```java
+InputStream is = new FileInputStream("input.txt");
+Reader reader = new InputStreamReader(is);
+```
+
+**[JpaRepository](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html)**
+```java
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    // Define query methods here
+}
+```
 
