@@ -11,7 +11,7 @@
    * [2.7  Object Pool](#27-object-pool)
 - [3. Structural Design Patterns](#3-structural-design-patterns)   
    * [3.1  Adapter](#31-adapter)
-   * 3.2  Bridge
+   * [3.2  Bridge](#32-bridge)
    * 3.3  Decorator
    * 3.4  Composite
    * 3.5  Facade
@@ -180,3 +180,18 @@ public interface UserRepository extends JpaRepository<User, Long> {
 }
 ```
 
+## 3.2  Bridge<a name="32-bridge"></a>
+The Bridge pattern decouples an abstraction from its implementation, allowing them to vary independently. It bridges them together through composition. For a sample code implementation, please click [here](src/main/java/com/pattern/bridge).
+
+### 3.2.1  When to Use
+- When the application requires platform independence and implementations might vary significantly across platforms.
+- When both the abstraction and its implementation need to be extended frequently without affecting each other.
+- When multiple abstractions should share an implementation, which can be dynamically switched at runtime.
+- When there is a need to switch implementations at runtime without altering the client code.
+
+### 3.2.2  Real-Life Examples
+**Logger API**<br>
+The abstraction is the Logger interface or abstract class that defines logging methods such as `logInfo` and `logError`. Different implementations can include `ConsoleLogger`, `FileLogger`, and `DatabaseLogger`, each providing a specific logging mechanism. The Bridge pattern is used here as the client code interacts with the Logger abstraction, allowing the actual logging mechanism (console, file, database) to vary independently. This decoupling facilitates the use of different logging methods without modifying the core logging logic.
+
+**JDBC API**<br> 
+The abstraction is represented by the JDBC API itself, including interfaces such as `java.sql.Connection` and `java.sql.Statement`. Various database drivers, such as those for `MySQL`, `PostgreSQL`, and `Oracle`, serve as the concrete implementations. The Bridge pattern allows the client code to interact with a standard API while the underlying database implementation can change independently. The JDBC driver manager acts as the bridge, enabling seamless database operations regardless of the specific database being used.
