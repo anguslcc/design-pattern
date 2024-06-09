@@ -12,9 +12,9 @@
 - [3. Structural Design Patterns](#3-structural-design-patterns)   
    * [3.1  Adapter](#31-adapter)
    * [3.2  Bridge](#32-bridge)
-   * 3.3  Decorator
-   * 3.4  Composite
-   * 3.5  Facade
+   * [3.3  Decorator](#33-decorator)
+   * [3.4  Composite](#34-composite)
+   * [3.5  Facade](#35-facade)
    * 3.6  Flyweight
    * 3.7  Proxy
 - 4. Behavioral Design Patterns   
@@ -195,3 +195,38 @@ The abstraction is the Logger interface or abstract class that defines logging m
 
 **JDBC API**<br> 
 The abstraction is represented by the JDBC API itself, including interfaces such as `java.sql.Connection` and `java.sql.Statement`. Various database drivers, such as those for `MySQL`, `PostgreSQL`, and `Oracle`, serve as the concrete implementations. The Bridge pattern allows the client code to interact with a standard API while the underlying database implementation can change independently. The JDBC driver manager acts as the bridge, enabling seamless database operations regardless of the specific database being used.
+
+## 3.3  Decorator<a name="33-decorator"></a>
+The Decorator pattern allows for the dynamic addition of behaviours to individual objects without affecting the behaviour of other objects from the same class. By using the same interface, decorators provide a flexible alternative to subclassing for extending functionality.
+
+### 3.3.1  When to Use
+- When you need to add responsibilities to individual objects dynamically and transparently, without affecting other objects.
+- When you want to add behavior to an object, either statically or dynamically, without altering its structure.
+
+### 3.3.2  Real-Life Examples
+**[BufferedOutputStream](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedOutputStream.html)**
+```java
+OutputStream fileOutputStream = new FileOutputStream("output.txt");
+OutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+```
+
+## 3.4  Composite<a name="34-composite"></a>
+The Composite pattern allows you to compose objects into tree structures, enabling clients to treat individual objects and compositions of objects in the same way.
+
+### 3.4.1  When to Use
+- When you need to represent hierarchical structures of objects.
+- When you want clients to be able to ignore the difference between compositions of objects and individual objects.
+
+### 3.4.2  Real-Life Examples
+
+
+## 3.5  Facade<a name="35-facade"></a>
+The Facade pattern provides a simplified interface to a complex subsystem. It hides the complexities of the subsystem and makes it easier to use by providing a single simple interface.
+
+### 3.5.1  When to Use
+- When you want to provide a simple interface to a complex subsystem.
+- When there are many interdependent classes or interfaces in a subsystem and you want to reduce the dependency of external code on this subsystem.
+
+### 3.5.2  Real-Life Examples
+**[URL](https://docs.oracle.com/en/java/javase/17/docs//api/java.base/java/net/URL.html)**<br>
+Users can create a `URL` object and open a connection to it with just a few lines of code, abstracting away the complexities of different network protocols. Internally, `URL` delegates the actual work of connecting and data transfer to various protocol handlers, which the user does not need to interact with directly.
