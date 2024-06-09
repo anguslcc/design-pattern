@@ -15,7 +15,7 @@
    * [3.3  Decorator](#33-decorator)
    * [3.4  Composite](#34-composite)
    * [3.5  Facade](#35-facade)
-   * 3.6  Flyweight
+   * [3.6  Flyweight](#36-flyweight)
    * 3.7  Proxy
 - 4. Behavioral Design Patterns   
    * 4.1  Chain of Responsibility
@@ -230,3 +230,14 @@ The Facade pattern provides a simplified interface to a complex subsystem. It hi
 ### 3.5.2  Real-Life Examples
 **[URL](https://docs.oracle.com/en/java/javase/17/docs//api/java.base/java/net/URL.html)**<br>
 Users can create a `URL` object and open a connection to it with just a few lines of code, abstracting away the complexities of different network protocols. Internally, `URL` delegates the actual work of connecting and data transfer to various protocol handlers, which the user does not need to interact with directly.
+
+## 3.6  Flyweight<a name="36-flyweight"></a>
+The Flyweight pattern minimizes memory usage by sharing as much data as possible with other similar objects.
+
+### 3.6.1  When to Use
+- When an application uses a large number of objects that can cause high memory consumption.
+- When most of the object state can be made extrinsic, meaning it can be passed in from the outside rather than stored internally.
+- When the objects are immutable and can be shared safely across different contexts.
+
+### 3.6.2  Real-Life Examples
+**[String.intern()](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#intern())**
