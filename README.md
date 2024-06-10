@@ -18,7 +18,7 @@
    * [3.6  Flyweight](#36-flyweight)
    * [3.7  Proxy](#37-proxy)
 - [4. Behavioral Design Patterns](#4-behavioral-design-patterns)   
-   * 4.1  Chain of Responsibility
+   * [4.1  Chain of Responsibility](#41-chain-of-responsibility)
    * 4.2  Command
    * 4.3  Interpreter
    * 4.4  Mediator
@@ -262,3 +262,15 @@ Hibernate uses proxies to implement lazy loading of entities. When an entity is 
 Spring AOP uses proxies to add additional behavior to objects. For example, proxies can manage transactions or caching. The proxy intercepts method calls and applies cross-cutting concerns like logging, security, or transaction management before delegating to the actual method.
 
 # 4. Behavioral Design Patterns<a name="4-behavioral-design-patterns"></a>
+
+## 4.1  Chain of Responsibility<a name="41-chain-of-responsibility"></a>
+The Chain of Responsibility pattern allows a request to be passed along a chain of handlers. Each handler decides either to process the request or to pass it to the next handler in the chain. This pattern decouples the sender of the request from its receivers, giving more flexibility in assigning responsibilities to objects.
+
+### 4.1.1  When to Use
+- When multiple objects might handle a request and the handler is not known beforehand.
+- When you want to issue a request to one of several objects without specifying the receiver explicitly.
+- When you want to add or change handlers dynamically without affecting the clients that send requests.
+
+### 4.1.2  Real-Life Examples
+**[SecurityFilterChain](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/web/SecurityFilterChain.html)**<br>
+In Spring Security, a series of filters is applied to incoming HTTP requests to handle various aspects of security, such as authentication, authorization, CSRF protection, and more. Each filter in the chain has the opportunity to process the request or pass it to the next filter in the chain.
