@@ -16,8 +16,8 @@
    * [3.4  Composite](#34-composite)
    * [3.5  Facade](#35-facade)
    * [3.6  Flyweight](#36-flyweight)
-   * 3.7  Proxy
-- 4. Behavioral Design Patterns   
+   * [3.7  Proxy](#37-proxy)
+- [4. Behavioral Design Patterns](#4-behavioral-design-patterns)   
    * 4.1  Chain of Responsibility
    * 4.2  Command
    * 4.3  Interpreter
@@ -241,3 +241,24 @@ The Flyweight pattern minimizes memory usage by sharing as much data as possible
 
 ### 3.6.2  Real-Life Examples
 **[String.intern()](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#intern())**
+
+## 3.7  Proxy<a name="37-proxy"></a>
+The Proxy pattern provides a placeholder for another object to control access to it. Proxies can be used to add an additional layer of control to an object, handling tasks such as lazy initialization, access control, logging, and more. There are three types of proxies:<br>
+
+- Protection Proxy: Controls access to an object based on permissions.
+- Remote Proxy: Provides a local representative for an object located on a remote server.
+- Virtual Proxy: Controls access to a resource that is expensive to create by initializing it only when needed.
+
+### 3.7.1  When to Use
+- When you need to control access to an object, such as controlling permissions or managing resource-intensive operations.
+- When you want to add functionality to an object transparently, without modifying the actual object.
+- When you need to manage the lifecycle of a resource or object, like lazy loading or caching.
+
+### 3.7.2  Real-Life Examples
+**Lazy Loading in Hibernate**<br>
+Hibernate uses proxies to implement lazy loading of entities. When an entity is requested, a proxy object is returned instead of the actual entity, and the database query to load the entity data is only executed when the proxy is first accessed.
+
+**Aspect-Oriented Programming (AOP) in Spring Framework**<br>
+Spring AOP uses proxies to add additional behavior to objects. For example, proxies can manage transactions or caching. The proxy intercepts method calls and applies cross-cutting concerns like logging, security, or transaction management before delegating to the actual method.
+
+# 4. Behavioral Design Patterns<a name="4-behavioral-design-patterns"></a>
